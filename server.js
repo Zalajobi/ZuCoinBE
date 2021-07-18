@@ -61,6 +61,15 @@ app.get('/maxliquidity', (req, res) => {
     })()
 });
 
+// Max Transaction
+app.get( '/maxtxAmount', (req, res) => {
+    (async () => {
+        res.send(await contract.methods.maxTxAmountUI().call());
+    })()
+});
+
+
+
 
 
 
@@ -83,21 +92,6 @@ app.get( '/symbol', (req, res) => {
 app.get( '/wallet', (req, res) => {
     (async () => {
         res.send(await contract.methods.maxWalletSizeUI(req.query.address).call());
-    })()
-});
-
-
-// Max Transaction
-app.get( '/maxtxAmount', (req, res) => {
-    (async () => {
-        res.send(await contract.methods.maxTxAmountUI().call());
-    })()
-});
-
-//Max Tax Fee
-app.get('/maxtx', (req, res) => {
-    (async () => {
-        res.send(await contract.methods.maxTaxFee().call());
     })()
 });
 

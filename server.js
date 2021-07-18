@@ -68,6 +68,13 @@ app.get( '/maxtxAmount', (req, res) => {
     })()
 });
 
+// Max Wallet size
+app.get( '/maxWalletSize', (req, res) => {
+    (async () => {
+        res.send(await contract.methods.maxWalletSizeUI(req.query.address).call());
+    })()
+});
+
 
 
 
@@ -85,13 +92,6 @@ app.get( '/balance', (req, res) => {
 app.get( '/symbol', (req, res) => {
     (async () => {
         res.send(await contract.methods.symbol().call());
-    })()
-});
-
-// Max Wallet size
-app.get( '/wallet', (req, res) => {
-    (async () => {
-        res.send(await contract.methods.maxWalletSizeUI(req.query.address).call());
     })()
 });
 

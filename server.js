@@ -33,6 +33,14 @@ app.get('/liquidityFee', (req, res) => {
     })()
 })
 
+//Tax Fee
+app.get('/taxFee', (req, res) => {
+    (async () => {
+       res.send(await contract.methods._taxFee().call())
+    })()
+})
+
+
 
 // Balance
 app.get( '/balance', (req, res) => {

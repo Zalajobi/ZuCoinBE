@@ -47,6 +47,13 @@ app.get('/maxTaxFee', (req, res) => {
     }) ()
 })
 
+// Liquidity Fee
+app.get('/liquidityfee', (req, res) => {
+    (async () => {
+        res.send(await contract.methods._liquidityFee().call())
+    }) ()
+})
+
 // Max Liquidity Fee
 app.get('/maxliquidity', (req, res) => {
     (async () => {

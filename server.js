@@ -75,11 +75,12 @@ app.get( '/maxWalletSize', (req, res) => {
     })()
 });
 
-
-
-
-
-
+// Symbol
+app.get( '/symbol', (req, res) => {
+    (async () => {
+        res.send(await contract.methods.symbol().call());
+    })()
+});
 
 // Balance
 app.get( '/balance', (req, res) => {
@@ -88,12 +89,12 @@ app.get( '/balance', (req, res) => {
     })()
 });
 
-// Symbol
-app.get( '/symbol', (req, res) => {
+//Is excluded from fee?
+app.get('/chargeableFee', (req, res) => {
     (async () => {
-        res.send(await contract.methods.symbol().call());
-    })()
-});
+        res.send(await contract.methods.isExcludedFromFee(req.query.address).call())
+    }) ()
+})
 
 
 //Default URL

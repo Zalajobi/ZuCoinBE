@@ -96,6 +96,13 @@ app.get('/chargeableFee', (req, res) => {
     }) ()
 })
 
+//Reward
+app.get('/rewardExclusion', (req, res) => {
+    (async  () => {
+        res.send(await contract.methods.isExcludedFromReward(req.query.address).call())
+    }) ()
+})
+
 
 //Default URL
 app.get('/', (req, res) => {

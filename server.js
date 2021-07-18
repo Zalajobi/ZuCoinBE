@@ -49,7 +49,7 @@ app.get(baseUrl + 'wallet', (req, res) => {
 
 
 // Max Transaction
-app.get(baseUrl + 'maxtx', (req, res) => {
+app.get(baseUrl + 'maxtxAmount', (req, res) => {
     (async () => {
         res.send(await contract.methods.maxTxAmountUI().call());
     })()

@@ -63,7 +63,7 @@ app.get(baseUrl + 'maxtx', (req, res) => {
 });
 
 // Max Liquidity Fee
-app.get(baseUrl + 'maxtx', (req, res) => {
+app.get(baseUrl + 'maxliquidity', (req, res) => {
     (async () => {
         res.send(await contract.methods.maxLiquidityFee().call());
     })()

@@ -71,7 +71,7 @@ app.get( '/maxtxAmount', (req, res) => {
 // Max Wallet size
 app.get( '/maxWalletSize', (req, res) => {
     (async () => {
-        res.send(await contract.methods.maxWalletSizeUI(req.query.address).call());
+        res.send(await contract.methods.maxWalletSizeUI().call());
     })()
 });
 

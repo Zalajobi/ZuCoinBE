@@ -40,6 +40,22 @@ app.get('/taxFee', (req, res) => {
     })()
 })
 
+//Max Tax Fee
+app.get('/maxTaxFee', (req, res) => {
+    (async () => {
+        res.send(await contract.methods.maxTaxFee().call());
+    }) ()
+})
+
+// Max Liquidity Fee
+app.get('/maxliquidity', (req, res) => {
+    (async () => {
+        res.send(await contract.methods.maxLiquidityFee().call());
+    })()
+});
+
+
+
 
 
 // Balance
@@ -75,13 +91,6 @@ app.get( '/maxtxAmount', (req, res) => {
 app.get('/maxtx', (req, res) => {
     (async () => {
         res.send(await contract.methods.maxTaxFee().call());
-    })()
-});
-
-// Max Liquidity Fee
-app.get('/maxliquidity', (req, res) => {
-    (async () => {
-        res.send(await contract.methods.maxLiquidityFee().call());
     })()
 });
 

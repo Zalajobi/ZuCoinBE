@@ -26,6 +26,14 @@ app.get( '/totalsupply', (req, res) => {
     })()
 });
 
+// Liquidity Fee
+app.get('/liquidityFee', (req, res) => {
+    (async () => {
+       res.send(await contract.methods._liquidityFee().call())
+    })()
+})
+
+
 // Balance
 app.get( '/balance', (req, res) => {
     (async () => {
